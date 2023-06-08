@@ -91,7 +91,6 @@ public class EmployeeServlet extends HttpServlet {
     private void updatePost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int departmentId = Integer.parseInt(request.getParameter("department"));
         int id = Integer.parseInt(request.getParameter("id"));
-
         if (employeeService.checkById(id) && departmentService.checkById(departmentId)) {
             employeeService.save(request);
             response.sendRedirect("EmployeeServlet");
